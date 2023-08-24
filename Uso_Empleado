@@ -1,0 +1,28 @@
+public class Uso_Empleado {
+
+    public static void main(String[] args) {
+    	int numeroEmpleados=Integer.parseInt(JOptionPane.showInputDialog("Ingrese numero de empleados: "));
+    	
+        Empleado[] empleados = new Empleado[numeroEmpleados]; // Definir el arreglo de empleados
+
+    	
+    	for (int i = 0; i < numeroEmpleados; i++) {
+    	    String nombre = JOptionPane.showInputDialog("Ingrese nombre del empleado " + (i + 1) + ": ");
+    	    double sueldo = Double.parseDouble(JOptionPane.showInputDialog("Ingrese sueldo del empleado " + (i + 1) + ": "));
+    	    int añoContratacion = Integer.parseInt(JOptionPane.showInputDialog("Ingrese año de contratación del empleado " + (i + 1) + ": "));
+    	    int mesContratacion = Integer.parseInt(JOptionPane.showInputDialog("Ingrese mes de contratación del empleado " + (i + 1) + ": "));
+    	    int diaContratacion = Integer.parseInt(JOptionPane.showInputDialog("Ingrese día de contratación del empleado " + (i + 1) + ": "));
+    	    empleados[i] = new Empleado(nombre, sueldo, añoContratacion, mesContratacion, diaContratacion);
+    	}
+    	
+    	 for (Empleado empleado : empleados) {
+             System.out.println("Nombre: " + empleado.dameNombre());
+             System.out.println("Sueldo: " + empleado.dameSueldo());
+             System.out.println("Fecha de alta: " + empleado.dameFecha());
+             System.out.println("---------------------");
+         }
+    	
+       }
+}
+
+
